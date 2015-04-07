@@ -6,12 +6,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no
 		initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css" type="text/css">
 
 	<title>Estimote Scan</title>
 
 	<style>
 		/* @import 'lib/ionic/css/ionic.css'; */
-		@import 'ui/css/evothings-app.css';
+		/*@import 'ui/css/evothings-app.css';*/
 	</style>
 
 	<script>
@@ -26,23 +27,49 @@
 	<script src="libs/evothings/evothings.js"></script>
 	<script src="app.js"></script>
 
+	<style type="text/css">
+		.panel {
+			padding: 0;
+			width: 100%;
+		}
+
+		.panel {
+			margin-bottom: 2px;
+		}
+
+		.panel-heading {
+			padding: 5px 15px;
+			font-size: 40px;
+		}
+
+		.panel-heading#panel-top {
+			padding: 30px;
+			font-size: 40px;
+		}
+
+
+	</style>
 </head>
 
-<body style="background: black; padding: 0; margin: 0;">
+<body>
 
-	<header style="background: ligthBlue;">
-		<button class="back" onclick="history.back()">
-			<img src="ui/images/arrow-left.svg" />
-		</button>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="panel panel-success" style="position: fixed; top: 0; z-index: 10000;">
+				<div class="panel-heading" id="panel-top">
+					<h1 class="panel-title text-center">Beacons detected...</h1>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<img class="logotype" src="ui/images/logo.svg" alt="Evothings" />
+	<div class="container">
+		<div class="row" style="margin-top: 120px;">
+			<div class="col-sm-4 col-sm-offset-4" id="found-beacons">
 
-		<!--<button class="menu" onclick=""><img src="ui/images/menu.svg" /></button>-->
-	</header>
-
-	<h1 style="color: white;">Estimote Scan</h1>
-	<p style="color: white;">Demo of ranging for Estimote Beacons. Works with all factory configured beacons.</p>
-	<ul id="found-beacons" class="dynamic"></ul>
+			</div>
+		</div>
+	</div>
 
 </body>
 

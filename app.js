@@ -64,13 +64,27 @@ var app = (function() {
 			if (beacon.timeStamp + 60000 > timeNow) {
 				// Create tag to display beacon data.
 				var element = $(
-					'<li style="background: black; color: lime;">'
-					+	'Major: ' + beacon.major + '<br />'
-					+	'Minor: ' + beacon.minor + '<br />'
-					+	proximityHTML(beacon)
-					+	distanceHTML(beacon)
-					+	rssiHTML(beacon)
-					+ '</li>'
+					'<div class="panel panel-info">' +
+						'<div class="panel-heading">' +
+							'<p class="panel-title">' + proximityHTML(beacon) + '</p>' +
+						'</div>' +
+					'</div>' +
+					'<div class="panel panel-info">' +
+						'<div class="panel-heading">' +
+							// proximityHTML(beacon) +
+							'<p class="panel-title">' + distanceHTML(beacon) + '</p>' +
+						'</div>' +
+					'</div>' +
+					'<div class="panel panel-default">' +
+						'<div class="panel-heading">' +
+							'<p class="panel-title">Major: ' + beacon.major + '<span class="pull-right">Minor: ' + beacon.minor + '</span></p>' +
+						'</div>' +
+					'</div>' +
+					'<div class="panel panel-default">' +
+						'<div class="panel-heading">' +
+							'<p class="panel-title">' + rssiHTML(beacon) + '</p>' +
+						'</div>' +
+					 '</div><br><br>'
 				);
 
 				$('#found-beacons').append(element);
@@ -131,7 +145,7 @@ var app = (function() {
 
 		var html =
 			'RSSI: ' + beacon.rssi + '<br />'
-			+ '<div style="background:' + rgb + ';height:20px;width:'
+			+ '<div style="background:' + rgb + ';height: 30px;width:'
 			+ 		rssiWidth + '%;"></div>'
 
 		return html;
