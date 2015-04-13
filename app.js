@@ -30,8 +30,10 @@ var app = (function() {
 			{
 				// Insert beacon into table of found beacons.
 				var beacon = beaconInfo.beacons[i];
+				console.log(beacon);
 				beacon.timeStamp = Date.now();
 				var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
+				console.log(key);
 				beacons[key] = beacon;
 			}
 		}
